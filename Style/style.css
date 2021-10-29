@@ -3,6 +3,109 @@ body {
   cursor: auto;
 }
 
+.animationTest {
+  position: absolute;
+  z-index: 999999;
+  min-height: 300vh;
+  background-color: rgba(242, 242, 242, 0.7);
+  -webkit-animation: animTest 3.2s ease-in-out forwards;
+          animation: animTest 3.2s ease-in-out forwards;
+}
+
+.animationTest svg {
+  position: relative;
+  width: 50%;
+  left: 25%;
+}
+
+.animationTest .city {
+  fill: none;
+  stroke: #222;
+  stroke-width: 3px;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  -webkit-animation: move 2.5s ease-in-out;
+          animation: move 2.5s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.animationTest .g {
+  fill: url(#SVGID_1_);
+  stroke: url(#SVGID_1_);
+  stroke-width: 5px;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  -webkit-animation: move 2s linear;
+          animation: move 2s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.animationTest .v {
+  fill: url(#SVGID_2_);
+  stroke: url(#SVGID_2_);
+  stroke-width: 5px;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  -webkit-animation: move 2s linear;
+          animation: move 2s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.animationTest .a {
+  fill: url(#SVGID_3_);
+  stroke: url(#SVGID_3_);
+  stroke-width: 5px;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  -webkit-animation: move 2s linear;
+          animation: move 2s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.animationTest .carrelages {
+  fill: #222;
+  stroke: #222;
+  stroke-width: 0.5px;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  -webkit-animation: move 1.5s linear;
+          animation: move 1.5s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes animTest {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: collapse;
+    display: none;
+  }
+}
+
+@keyframes animTest {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: collapse;
+    display: none;
+  }
+}
+
 /* Header */
 header {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0))), url(/Photos/Geneva.jpg) no-repeat 40% 17%;
@@ -160,8 +263,8 @@ h1 {
   max-width: 400px;
   height: auto;
   margin: auto;
-  -webkit-animation: showLogo 5.5s ease-in-out forwards;
-          animation: showLogo 5.5s ease-in-out forwards;
+  -webkit-animation: showLogo 3.5s ease-in-out forwards;
+          animation: showLogo 3.5s ease-in-out forwards;
 }
 
 @media all and (max-width: 576px) {
@@ -254,14 +357,28 @@ h1 {
 }
 
 @-webkit-keyframes move {
+  0% {
+    fill-opacity: 0;
+  }
+  90% {
+    fill-opacity: 0;
+  }
   100% {
     stroke-dashoffset: 0;
+    fill-opacity: 1;
   }
 }
 
 @keyframes move {
+  0% {
+    fill-opacity: 0;
+  }
+  90% {
+    fill-opacity: 0;
+  }
   100% {
     stroke-dashoffset: 0;
+    fill-opacity: 1;
   }
 }
 
@@ -358,6 +475,25 @@ p {
   border-bottom: white 1px solid;
 }
 
+.cardContainer .slideIn {
+  opacity: 0;
+}
+
+.cardContainer .slideIn-transition {
+  -webkit-animation: slideInTop 0.7s ease-in-out forwards;
+          animation: slideInTop 0.7s ease-in-out forwards;
+}
+
+.cardContainer .slideIn-transition:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.cardContainer .slideIn-transition:nth-child(4) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
 .cardContainer .card {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -414,6 +550,32 @@ p {
   color: #2ba644;
 }
 
+@-webkit-keyframes slideInTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideInTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 article .divLine {
   position: relative;
   padding-bottom: 10px;
@@ -428,6 +590,30 @@ article .divLine::after {
   top: 100%;
   z-index: 1;
   border-radius: 10px;
+}
+
+article .divImg .slideIn {
+  opacity: 0;
+}
+
+article .divImg .slideIn-transition {
+  -webkit-animation: slideInTop 0.7s ease-in-out forwards;
+          animation: slideInTop 0.7s ease-in-out forwards;
+}
+
+article .divImg .slideIn-transition:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+article .divImg .slideIn-transition:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+article .divImg .slideIn-transition:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
 }
 
 article .divImg img {

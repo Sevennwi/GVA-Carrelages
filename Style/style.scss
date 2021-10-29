@@ -17,6 +17,86 @@ body {
   cursor: auto;
 }
 
+.animationTest {
+  position: absolute;
+  z-index: 999999;
+  min-height: 300vh;
+  background-color: rgba($color: #f2f2f2, $alpha: 0.7);
+  animation: animTest 3.2s ease-in-out forwards;
+  svg {
+    position: relative;
+    width: 50%;
+    left: 25%;
+  }
+    .city {
+      fill: none;
+      stroke: #222;
+      stroke-width: 3px;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: move 2.5s ease-in-out;
+      animation-fill-mode: forwards;
+  }
+
+  .g {
+      fill: url(#SVGID_1_);
+      stroke: url(#SVGID_1_);
+      stroke-width: 5px;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: move 2s linear;
+      animation-fill-mode: forwards;
+  }
+
+  .v {
+      fill: url(#SVGID_2_);
+      stroke: url(#SVGID_2_);
+      stroke-width: 5px;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: move 2s linear;
+      animation-fill-mode: forwards;
+
+
+  }
+
+  .a {
+      fill: url(#SVGID_3_);
+      stroke: url(#SVGID_3_);
+      stroke-width: 5px;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: move 2s linear;
+      animation-fill-mode: forwards;
+
+  }
+
+  .carrelages {
+      fill: #222;
+      stroke: #222;
+      stroke-width: 0.5px;
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: move 1.5s linear;
+
+      animation-fill-mode: forwards;
+  }
+}
+
+@keyframes animTest {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: collapse;
+    display: none;
+  }
+}
+
 /* Header */
 
 header {
@@ -139,7 +219,7 @@ h1 {
   max-width: 400px;
   height: auto;
   margin: auto;
-  animation: showLogo 5.5s ease-in-out forwards;
+  animation: showLogo 3.5s ease-in-out forwards;
   @include mobile {
     position: absolute;
     z-index: 1;
@@ -217,8 +297,16 @@ h1 {
 
 
 @keyframes move {
+  0% {
+    fill-opacity: 0;
+  }
+
+  90% {
+    fill-opacity: 0;
+  }
   100% {
     stroke-dashoffset: 0;
+    fill-opacity: 1;
   }
 }
 
@@ -288,6 +376,19 @@ p {
   .h3Line {
     border-bottom: white 1px solid;
   }
+  
+  .slideIn {
+    opacity: 0;
+  }
+  .slideIn-transition {
+    animation: slideInTop 0.7s ease-in-out forwards;
+    &:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.1s;
+    }
+  }
 
   .card {
     flex-direction: row;
@@ -338,6 +439,17 @@ p {
   }
 }
 
+@keyframes slideInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 article {
   .divLine {
     position: relative;
@@ -354,26 +466,43 @@ article {
     }
   }
 
-  .divImg img {
-    width: 250px;
-    height: 200px;
-    margin: 10px 0px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 6px lightgrey;
-  }
+  .divImg {
+    .slideIn {
+      opacity: 0;
+    }
+    .slideIn-transition {
+      animation: slideInTop 0.7s ease-in-out forwards;
+      &:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+    }
+    img {
+      width: 250px;
+      height: 200px;
+      margin: 10px 0px;
+      border-radius: 5px;
+      box-shadow: 5px 5px 6px lightgrey;
+    }
 
-  .divImg p {
-    position: relative;
-    padding-top: 20px;
-    &::after {
-      content: "";
-      width: 15%;
-      border-bottom: solid 3px black;
-      position: absolute;
-      left: 42%;
-      top: 20%;
-      z-index: 1;
-      border-radius: 10px;
+    p {
+      position: relative;
+      padding-top: 20px;
+      &::after {
+        content: "";
+        width: 15%;
+        border-bottom: solid 3px black;
+        position: absolute;
+        left: 42%;
+        top: 20%;
+        z-index: 1;
+        border-radius: 10px;
+      }
     }
   }
 }

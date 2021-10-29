@@ -139,6 +139,7 @@ h1 {
   max-width: 400px;
   height: auto;
   margin: auto;
+  animation: showLogo 5.5s ease-in-out forwards;
   @include mobile {
     position: absolute;
     z-index: 1;
@@ -153,78 +154,72 @@ h1 {
 
 .containerAnim {
   position: absolute;
-  background-color: white;
-  width: 40%;
-  max-height: 80%;
-  right: 5%;
-  top: 15%;
-  animation: vanish 8s ease-in-out forwards;
+  z-index: 999;
+  right: 5%;  /* Faire position */
+  top: 10%;
+  width: 37%;
+  animation: vanish 5s ease-in-out forwards;
+
+  .city {
+      fill: none;
+      stroke: #222;
+      stroke-width: 5px;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: move 3s ease-in-out;
+      animation-fill-mode: forwards;
+  }
+
+  .g {
+      fill: none;
+      stroke: $primary-color;
+      stroke-width: 5px;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: move 1s linear;
+      animation-fill-mode: forwards;
+  }
+
+  .v {
+      fill: none;
+      stroke: lighten($color: $primary-color, $amount: 10);
+      stroke-width: 5px;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: move 1.5s linear;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+
+  }
+
+  .a {
+      fill: none;
+      stroke: lighten($color: $primary-color, $amount: 20);
+      stroke-width: 5px;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: move 1.5s linear;
+      animation-fill-mode: forwards;
+      animation-delay: 2.2s;
+  }
+
+  .carrelages {
+      fill: none;
+      stroke: #222;
+      stroke-width: 1.6px;
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: move 1.5s linear;
+      animation-delay: 4s;
+      animation-fill-mode: forwards;
+  }
 }
-    
-.g {
-    fill: none;
-    stroke: green;
-    stroke-width: 5px;
-  
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    animation: move 2s linear;
-    animation-fill-mode: forwards;
 
-}
-
-.v {
-    fill: none;
-    stroke: green;
-    stroke-width: 5px;
-  
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    animation: move 2s linear;
-    animation-fill-mode: forwards;
-    animation-delay: 1.5s;
-
-}
-
-.a {
-    fill: none;
-    stroke: green;
-    stroke-width: 5px;
-  
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    animation: move 2s linear;
-    animation-fill-mode: forwards;
-    animation-delay: 3s;
-
-}
-
-.city {
-    fill: none;
-    stroke: green;
-    stroke-width: 5px;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-    animation: move 4s ease-in-out;
-  animation-fill-mode: forwards;
-  
-}
-
-.carrelages {
-  fill: none;
-    stroke: green;
-    stroke-width: 1.6px;
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200;
-    animation: move 3.5s linear;
-  animation-delay: 5s;
-  animation-fill-mode: forwards;
-}
 
 @keyframes move {
-    100% {
-        stroke-dashoffset: 0;
-    }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes vanish {
@@ -237,6 +232,18 @@ h1 {
   100% {
     opacity: 0;
     visibility: collapse;
+  }
+}
+
+@keyframes showLogo {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

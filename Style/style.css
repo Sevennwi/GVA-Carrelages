@@ -160,6 +160,8 @@ h1 {
   max-width: 400px;
   height: auto;
   margin: auto;
+  -webkit-animation: showLogo 5.5s ease-in-out forwards;
+          animation: showLogo 5.5s ease-in-out forwards;
 }
 
 @media all and (max-width: 576px) {
@@ -176,77 +178,77 @@ h1 {
 /* Header Animation */
 .containerAnim {
   position: absolute;
-  background-color: white;
-  width: 40%;
-  max-height: 80%;
+  z-index: 999;
   right: 5%;
-  top: 15%;
-  -webkit-animation: vanish 8s ease-in-out forwards;
-          animation: vanish 8s ease-in-out forwards;
+  /* Faire position */
+  top: 10%;
+  width: 37%;
+  -webkit-animation: vanish 5s ease-in-out forwards;
+          animation: vanish 5s ease-in-out forwards;
 }
 
-.g {
+.containerAnim .city {
   fill: none;
-  stroke: green;
+  stroke: #222;
   stroke-width: 5px;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  -webkit-animation: move 2s linear;
-          animation: move 2s linear;
+  -webkit-animation: move 3s ease-in-out;
+          animation: move 3s ease-in-out;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-.v {
+.containerAnim .g {
   fill: none;
-  stroke: green;
+  stroke: #16513d;
   stroke-width: 5px;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  -webkit-animation: move 2s linear;
-          animation: move 2s linear;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
-}
-
-.a {
-  fill: none;
-  stroke: green;
-  stroke-width: 5px;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  -webkit-animation: move 2s linear;
-          animation: move 2s linear;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
-}
-
-.city {
-  fill: none;
-  stroke: green;
-  stroke-width: 5px;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  -webkit-animation: move 4s ease-in-out;
-          animation: move 4s ease-in-out;
+  -webkit-animation: move 1s linear;
+          animation: move 1s linear;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-.carrelages {
+.containerAnim .v {
   fill: none;
-  stroke: green;
+  stroke: #21795b;
+  stroke-width: 5px;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  -webkit-animation: move 1.5s linear;
+          animation: move 1.5s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.containerAnim .a {
+  fill: none;
+  stroke: #2ca179;
+  stroke-width: 5px;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  -webkit-animation: move 1.5s linear;
+          animation: move 1.5s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+
+.containerAnim .carrelages {
+  fill: none;
+  stroke: #222;
   stroke-width: 1.6px;
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
-  -webkit-animation: move 3.5s linear;
-          animation: move 3.5s linear;
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
+  -webkit-animation: move 1.5s linear;
+          animation: move 1.5s linear;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -286,6 +288,30 @@ h1 {
   100% {
     opacity: 0;
     visibility: collapse;
+  }
+}
+
+@-webkit-keyframes showLogo {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showLogo {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

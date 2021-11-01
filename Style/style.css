@@ -3,22 +3,47 @@ body {
   cursor: auto;
 }
 
-.animationTest {
-  position: absolute;
+.animationLogo {
+  position: fixed;
   z-index: 999999;
-  min-height: 300vh;
-  background-color: rgba(242, 242, 242, 0.7);
-  -webkit-animation: animTest 3.2s ease-in-out forwards;
-          animation: animTest 3.2s ease-in-out forwards;
+  width: 100%;
+  height: 150vh;
+  background-color: rgba(242, 242, 242, 0.8);
+  -webkit-animation: animationLogo 3.2s ease-in-out forwards;
+          animation: animationLogo 3.2s ease-in-out forwards;
 }
 
-.animationTest svg {
+.animationLogo svg {
   position: relative;
-  width: 50%;
+  max-width: 50%;
   left: 25%;
+  top: 0;
 }
 
-.animationTest .city {
+@media all and (max-width: 1200px) {
+  .animationLogo svg {
+    max-width: 60%;
+    left: 18%;
+    top: 5%;
+  }
+}
+
+@media all and (max-width: 766px) {
+  .animationLogo svg {
+    max-width: 70%;
+    top: 10%;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .animationLogo svg {
+    max-width: 100%;
+    top: 15%;
+    left: 0;
+  }
+}
+
+.animationLogo svg .city {
   fill: none;
   stroke: #222;
   stroke-width: 3px;
@@ -30,55 +55,77 @@ body {
           animation-fill-mode: forwards;
 }
 
-.animationTest .g {
+.animationLogo svg .g {
   fill: url(#SVGID_1_);
   stroke: url(#SVGID_1_);
   stroke-width: 5px;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  -webkit-animation: move 2s linear;
-          animation: move 2s linear;
+  -webkit-animation: move 2s linear, fill 2s linear;
+          animation: move 2s linear, fill 2s linear;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-.animationTest .v {
+.animationLogo svg .v {
   fill: url(#SVGID_2_);
   stroke: url(#SVGID_2_);
   stroke-width: 5px;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  -webkit-animation: move 2s linear;
-          animation: move 2s linear;
+  -webkit-animation: move 2s linear, fill 2s linear;
+          animation: move 2s linear, fill 2s linear;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-.animationTest .a {
+.animationLogo svg .a {
   fill: url(#SVGID_3_);
   stroke: url(#SVGID_3_);
   stroke-width: 5px;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  -webkit-animation: move 2s linear;
-          animation: move 2s linear;
+  -webkit-animation: move 2s linear, fill 2s linear;
+          animation: move 2s linear, fill 2s linear;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-.animationTest .carrelages {
+.animationLogo svg .carrelages {
   fill: #222;
   stroke: #222;
   stroke-width: 0.5px;
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
-  -webkit-animation: move 1.5s linear;
-          animation: move 1.5s linear;
+  -webkit-animation: move 2s linear, fill 2s linear;
+          animation: move 2s linear, fill 2s linear;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes animTest {
+@-webkit-keyframes testmove {
+  0% {
+    -webkit-transform: translateX(0) scale(1);
+            transform: translateX(0) scale(1);
+  }
+  100% {
+    -webkit-transform: translateX(50%) scale(0.7);
+            transform: translateX(50%) scale(0.7);
+  }
+}
+
+@keyframes testmove {
+  0% {
+    -webkit-transform: translateX(0) scale(1);
+            transform: translateX(0) scale(1);
+  }
+  100% {
+    -webkit-transform: translateX(50%) scale(0.7);
+            transform: translateX(50%) scale(0.7);
+  }
+}
+
+@-webkit-keyframes animationLogo {
   0% {
     opacity: 1;
   }
@@ -92,7 +139,7 @@ body {
   }
 }
 
-@keyframes animTest {
+@keyframes animationLogo {
   0% {
     opacity: 1;
   }
@@ -103,6 +150,68 @@ body {
     opacity: 0;
     visibility: collapse;
     display: none;
+  }
+}
+
+@-webkit-keyframes move {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes move {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes fill {
+  0% {
+    fill-opacity: 0;
+  }
+  90% {
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes fill {
+  0% {
+    fill-opacity: 0;
+  }
+  90% {
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 1;
+  }
+}
+
+@-webkit-keyframes vanish {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: collapse;
+  }
+}
+
+@keyframes vanish {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: collapse;
   }
 }
 
@@ -112,6 +221,13 @@ header {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url(/Photos/Geneva.jpg) no-repeat 40% 17%;
   height: 90vh;
   position: relative;
+}
+
+@media all and (max-width: 1200px) {
+  header {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0))), url(/Photos/Geneva.jpg) no-repeat 48% 10%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url(/Photos/Geneva.jpg) no-repeat 48% 10%;
+  }
 }
 
 @media all and (max-width: 576px) {
@@ -127,7 +243,7 @@ header p {
           justify-content: center;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 766px) {
   header p {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -167,6 +283,18 @@ header .icon i {
 
 header .headerLine {
   border-bottom: 2px solid #2ba644;
+}
+
+@media all and (max-width: 1200px) {
+  header .headerLine {
+    font-size: 0.8em;
+  }
+}
+
+@media all and (max-width: 766px) {
+  header .headerLine {
+    font-size: 1em;
+  }
 }
 
 header .navbar-light .navbar-nav .nav-link.active {
@@ -224,8 +352,8 @@ header nav .navbar-collapse .navUl .nav-item .nav-link {
 header nav .navbar-collapse .navUl .nav-item .nav-link:hover {
   color: white;
   background-color: #16513d;
-  -webkit-transition: background-color 0.30s ease-in-out;
-  transition: background-color 0.30s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 header nav .navbar-collapse.collapsing {
@@ -253,7 +381,13 @@ h1 {
   font-size: 2.3em;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 1200px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media all and (max-width: 766px) {
   h1 {
     font-size: 2em;
   }
@@ -263,8 +397,12 @@ h1 {
   max-width: 400px;
   height: auto;
   margin: auto;
-  -webkit-animation: showLogo 3.5s ease-in-out forwards;
-          animation: showLogo 3.5s ease-in-out forwards;
+}
+
+@media all and (max-width: 1200px) {
+  .logo {
+    max-width: 350px;
+  }
 }
 
 @media all and (max-width: 576px) {
@@ -278,134 +416,9 @@ h1 {
   }
 }
 
-/* Header Animation */
-.containerAnim {
-  position: absolute;
-  z-index: 999;
-  right: 5%;
-  /* Faire position */
-  top: 10%;
-  width: 37%;
-  -webkit-animation: vanish 5s ease-in-out forwards;
-          animation: vanish 5s ease-in-out forwards;
-}
-
-.containerAnim .city {
-  fill: none;
-  stroke: #222;
-  stroke-width: 5px;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  -webkit-animation: move 3s ease-in-out;
-          animation: move 3s ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.containerAnim .g {
-  fill: none;
-  stroke: #16513d;
-  stroke-width: 5px;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  -webkit-animation: move 1s linear;
-          animation: move 1s linear;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.containerAnim .v {
-  fill: none;
-  stroke: #21795b;
-  stroke-width: 5px;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  -webkit-animation: move 1.5s linear;
-          animation: move 1.5s linear;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-}
-
-.containerAnim .a {
-  fill: none;
-  stroke: #2ca179;
-  stroke-width: 5px;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  -webkit-animation: move 1.5s linear;
-          animation: move 1.5s linear;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 2.2s;
-          animation-delay: 2.2s;
-}
-
-.containerAnim .carrelages {
-  fill: none;
-  stroke: #222;
-  stroke-width: 1.6px;
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-  -webkit-animation: move 1.5s linear;
-          animation: move 1.5s linear;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes move {
-  0% {
-    fill-opacity: 0;
-  }
-  90% {
-    fill-opacity: 0;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    fill-opacity: 1;
-  }
-}
-
-@keyframes move {
-  0% {
-    fill-opacity: 0;
-  }
-  90% {
-    fill-opacity: 0;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    fill-opacity: 1;
-  }
-}
-
-@-webkit-keyframes vanish {
-  0% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: collapse;
-  }
-}
-
-@keyframes vanish {
-  0% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: collapse;
-  }
+.logoAnim {
+  -webkit-animation: showLogo 3.5s ease-in-out forwards;
+          animation: showLogo 3.5s ease-in-out forwards;
 }
 
 @-webkit-keyframes showLogo {
@@ -432,7 +445,6 @@ h1 {
   }
 }
 
-/* Header Animation */
 /* Section */
 .h2Mobile {
   background-color: #16513d;
@@ -550,6 +562,16 @@ p {
   color: #2ba644;
 }
 
+@media (prefers-reduced-motion) {
+  .slideIn {
+    opacity: 1;
+  }
+  .slideIn-transition {
+    -webkit-animation: none !important;
+            animation: none !important;
+  }
+}
+
 @-webkit-keyframes slideInTop {
   0% {
     opacity: 0;
@@ -663,7 +685,7 @@ article .divImg p::after {
           align-items: center;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 766px) {
   .containerGeenLine .flexP {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -678,7 +700,7 @@ article .divImg p::after {
           justify-content: center;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 766px) {
   .containerGeenLine p {
     -webkit-box-align: center;
         -ms-flex-align: center;

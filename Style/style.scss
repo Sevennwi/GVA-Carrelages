@@ -1,8 +1,14 @@
 $primary-color: #16513d;
 $second-color: #2ba644;
 
+@mixin ordi {
+  @media all and (max-width: 1200px) {
+    @content;
+  }
+}
+
 @mixin tablet {
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 766px) {
     @content;
   }
 }
@@ -17,17 +23,32 @@ body {
   cursor: auto;
 }
 
-.animationTest {
-  position: absolute;
+.animationLogo {
+  position: fixed;
   z-index: 999999;
-  min-height: 300vh;
-  background-color: rgba($color: #f2f2f2, $alpha: 0.7);
-  animation: animTest 3.2s ease-in-out forwards;
+  width: 100%;
+  height: 150vh;
+  background-color: rgba($color: #f2f2f2, $alpha: 0.8);
+  animation: animationLogo 3.2s ease-in-out forwards;
   svg {
     position: relative;
-    width: 50%;
+    max-width: 50%;
     left: 25%;
-  }
+    top: 0;
+    @include ordi {
+      max-width: 60%;
+      left: 18%;
+      top: 5%;
+    }
+    @include tablet {
+      max-width: 70%;
+      top: 10%;
+    }
+    @include mobile {
+      max-width: 100%;
+      top: 15%;
+      left: 0;
+    }
     .city {
       fill: none;
       stroke: #222;
@@ -36,54 +57,57 @@ body {
       stroke-dashoffset: 1;
       animation: move 2.5s ease-in-out;
       animation-fill-mode: forwards;
-  }
+    }
 
-  .g {
+    .g {
       fill: url(#SVGID_1_);
       stroke: url(#SVGID_1_);
       stroke-width: 5px;
       stroke-dasharray: 1;
       stroke-dashoffset: 1;
-      animation: move 2s linear;
+      animation: move 2s linear, fill 2s linear;
       animation-fill-mode: forwards;
-  }
-
-  .v {
+    }
+    .v {
       fill: url(#SVGID_2_);
       stroke: url(#SVGID_2_);
       stroke-width: 5px;
       stroke-dasharray: 1;
       stroke-dashoffset: 1;
-      animation: move 2s linear;
+      animation: move 2s linear, fill 2s linear;
       animation-fill-mode: forwards;
-
-
-  }
-
-  .a {
+    }
+    .a {
       fill: url(#SVGID_3_);
       stroke: url(#SVGID_3_);
       stroke-width: 5px;
       stroke-dasharray: 1;
       stroke-dashoffset: 1;
-      animation: move 2s linear;
+      animation: move 2s linear, fill 2s linear;
       animation-fill-mode: forwards;
-
-  }
-
-  .carrelages {
+    }
+    .carrelages {
       fill: #222;
       stroke: #222;
       stroke-width: 0.5px;
       stroke-dasharray: 200;
       stroke-dashoffset: 200;
-      animation: move 1.5s linear;
-
+      animation: move 2s linear, fill 2s linear;
       animation-fill-mode: forwards;
+    }
   }
 }
 
-@keyframes animTest {
+@keyframes testmove {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    transform: translateX(50%) scale(0.7);
+  }
+}
+
+@keyframes animationLogo {
   0% {
     opacity: 1;
   }
@@ -97,6 +121,38 @@ body {
   }
 }
 
+@keyframes move {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  0% {
+    fill-opacity: 0;
+  }
+
+  90% {
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes vanish {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: collapse;
+  }
+}
+
 /* Header */
 
 header {
@@ -104,10 +160,14 @@ header {
     url(/Photos/Geneva.jpg) no-repeat 40% 17%;
   height: 90vh;
   position: relative;
-    @include mobile {
-      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+  @include ordi() {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+      url(/Photos/Geneva.jpg) no-repeat 48% 10%;
+  }
+  @include mobile {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
       url(/Photos/Geneva.jpg) no-repeat 40% 16%;
-    }
+  }
 
   p {
     justify-content: center;
@@ -140,6 +200,12 @@ header {
 
   .headerLine {
     border-bottom: 2px solid $second-color;
+    @include ordi {
+      font-size: 0.8em;
+    }
+    @include tablet {
+      font-size: 1em;
+    }
   }
 
   .navbar-light .navbar-nav .nav-link.active {
@@ -162,44 +228,44 @@ header {
         height: 100%;
       }
       .navUl {
-      margin-right: 3%;
-      font-size: 1.3em;
-      @include mobile {
-        position: relative;
-        height: 270px;
-        z-index: 2;
-        background-color: rgba($color: #222, $alpha: 0.9);
-        border-radius: 3%;
-      }
-      .nav-item {
-        padding: 2px 10px;
+        margin-right: 3%;
+        font-size: 1.3em;
         @include mobile {
-          margin: 3% 15%;
+          position: relative;
+          height: 270px;
+          z-index: 2;
+          background-color: rgba($color: #222, $alpha: 0.9);
+          border-radius: 3%;
         }
-        .nav-link {
-          color: white;
-          padding: 5px 10px;
-          &:hover {
+        .nav-item {
+          padding: 2px 10px;
+          @include mobile {
+            margin: 3% 15%;
+          }
+          .nav-link {
             color: white;
-            background-color: $primary-color;
-            transition: background-color 0.30s ease-in-out;
+            padding: 5px 10px;
+            &:hover {
+              color: white;
+              background-color: $primary-color;
+              transition: background-color 0.3s ease-in-out;
+            }
           }
         }
       }
     }
-  }
     .navbar-collapse.collapsing {
-        left: -120%;
-        transition: height 0s ease;
+      left: -120%;
+      transition: height 0s ease;
     }
 
     .navbar-collapse.show {
-        left: -10%;
-        transition: left 400ms ease-in-out;
+      left: -10%;
+      transition: left 400ms ease-in-out;
     }
 
     .navbar-toggler.collapsed ~ .navbar-collapse {
-        transition: left 500ms ease-in-out;
+      transition: left 500ms ease-in-out;
     }
   }
 }
@@ -210,6 +276,9 @@ header {
 
 h1 {
   font-size: 2.3em;
+  @include ordi {
+    font-size: 2em;
+  }
   @include tablet {
     font-size: 2em;
   }
@@ -219,7 +288,9 @@ h1 {
   max-width: 400px;
   height: auto;
   margin: auto;
-  animation: showLogo 3.5s ease-in-out forwards;
+  @include ordi {
+    max-width: 350px;
+  }
   @include mobile {
     position: absolute;
     z-index: 1;
@@ -230,97 +301,8 @@ h1 {
   }
 }
 
-/* Header Animation */
-
-.containerAnim {
-  position: absolute;
-  z-index: 999;
-  right: 5%;  /* Faire position */
-  top: 10%;
-  width: 37%;
-  animation: vanish 5s ease-in-out forwards;
-
-  .city {
-      fill: none;
-      stroke: #222;
-      stroke-width: 5px;
-      stroke-dasharray: 1;
-      stroke-dashoffset: 1;
-      animation: move 3s ease-in-out;
-      animation-fill-mode: forwards;
-  }
-
-  .g {
-      fill: none;
-      stroke: $primary-color;
-      stroke-width: 5px;
-      stroke-dasharray: 1;
-      stroke-dashoffset: 1;
-      animation: move 1s linear;
-      animation-fill-mode: forwards;
-  }
-
-  .v {
-      fill: none;
-      stroke: lighten($color: $primary-color, $amount: 10);
-      stroke-width: 5px;
-      stroke-dasharray: 1;
-      stroke-dashoffset: 1;
-      animation: move 1.5s linear;
-      animation-fill-mode: forwards;
-      animation-delay: 1s;
-
-  }
-
-  .a {
-      fill: none;
-      stroke: lighten($color: $primary-color, $amount: 20);
-      stroke-width: 5px;
-      stroke-dasharray: 1;
-      stroke-dashoffset: 1;
-      animation: move 1.5s linear;
-      animation-fill-mode: forwards;
-      animation-delay: 2.2s;
-  }
-
-  .carrelages {
-      fill: none;
-      stroke: #222;
-      stroke-width: 1.6px;
-      stroke-dasharray: 200;
-      stroke-dashoffset: 200;
-      animation: move 1.5s linear;
-      animation-delay: 4s;
-      animation-fill-mode: forwards;
-  }
-}
-
-
-@keyframes move {
-  0% {
-    fill-opacity: 0;
-  }
-
-  90% {
-    fill-opacity: 0;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    fill-opacity: 1;
-  }
-}
-
-@keyframes vanish {
-  0% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: collapse;
-  }
+.logoAnim {
+  animation: showLogo 3.5s ease-in-out forwards;
 }
 
 @keyframes showLogo {
@@ -334,9 +316,6 @@ h1 {
     opacity: 1;
   }
 }
-
-
-/* Header Animation */
 
 /* Section */
 
@@ -376,7 +355,7 @@ p {
   .h3Line {
     border-bottom: white 1px solid;
   }
-  
+
   .slideIn {
     opacity: 0;
   }
@@ -436,6 +415,15 @@ p {
         color: $second-color;
       }
     }
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .slideIn {
+    opacity: 1;
+  }
+  .slideIn-transition {
+    animation: none !important;
   }
 }
 

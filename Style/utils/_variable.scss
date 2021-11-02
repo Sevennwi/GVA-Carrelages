@@ -1,0 +1,31 @@
+$primary-color: #16513d;
+$second-color: #2ba644;
+
+@mixin ordi {
+  @media all and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media all and (max-width: 766px) {
+    @content;
+  }
+}
+
+@mixin tablet-subPage {
+  @media all and (max-width: 770px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media all and (max-width: 576px) {
+    @content;
+  }
+}
+
+body {
+  cursor: auto;
+  overflow-x: hidden;
+}

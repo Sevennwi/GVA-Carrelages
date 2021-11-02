@@ -1,0 +1,42 @@
+/* Footer */
+
+.containerGreen {
+  background-color: $primary-color;
+}
+
+.containerGeenLine {
+  border-top: 2px solid white;
+  margin: 0 auto;
+
+  .flexP {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  p {
+    justify-content: center;
+    @include tablet {
+      align-items: center;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      &:hover {
+        color: $second-color;
+        transition: color 0.15s ease-in-out;
+      }
+    }
+  }
+
+  .icon {
+    font-size: 30px;
+    margin: 0px 20px;
+    i {
+      vertical-align: middle;
+    }
+  }
+}

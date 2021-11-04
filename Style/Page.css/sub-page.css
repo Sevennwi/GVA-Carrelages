@@ -34,6 +34,7 @@ header p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-size: 1.1em;
 }
 
 @media all and (max-width: 766px) {
@@ -53,10 +54,6 @@ header p a:hover {
   color: #2ba644;
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
-}
-
-header p .test {
-  text-align: end;
 }
 
 header .flexP {

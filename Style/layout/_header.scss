@@ -3,6 +3,7 @@
 header {
   p {
     justify-content: center;
+    font-size: 1.1em;
     @include tablet {
       align-items: center;
     }

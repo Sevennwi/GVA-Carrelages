@@ -1,4 +1,29 @@
 @charset "UTF-8";
+@-webkit-keyframes slideInTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes slideInTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 body {
   cursor: auto;
   overflow-x: hidden;
@@ -350,6 +375,7 @@ section article .containRight::after {
 
 section article .containRight p {
   font-size: 1.1em;
+  text-align: justify;
 }
 
 @media all and (max-width: 770px) {
@@ -409,18 +435,28 @@ section article .containLeft::after {
 
 section article .containLeft p {
   font-size: 1.1em;
+  text-align: justify;
 }
 
 @media all and (max-width: 770px) {
   section article .containLeft p {
     text-align: center;
-    padding-bottom: 10px;
+    padding-top: 10px;
   }
 }
 
 section article .containLeft img {
   max-width: 350px;
   border-radius: 5%;
+}
+
+section article .slideIn {
+  opacity: 0;
+}
+
+section article .slideIn-transition {
+  -webkit-animation: slideInTop 0.7s ease-in-out forwards;
+          animation: slideInTop 0.7s ease-in-out forwards;
 }
 
 section .banner {
@@ -438,6 +474,15 @@ section .banner-2 {
 }
 
 section .banner-2 h2 {
+  padding: 20px 0px;
+}
+
+section .banner-3 {
+  background: url(/Photos/Bannière/Team-ban1.jpg) no-repeat;
+  background-size: cover;
+}
+
+section .banner-3 h2 {
   padding: 20px 0px;
 }
 /*# sourceMappingURL=sub-page.css.map */

@@ -131,7 +131,7 @@
 header {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
     url(/Photos/Background/Geneva.jpg) no-repeat 40% 17%;
-  height: 90vh;
+  height: 100vh;
   position: relative;
     @include ordi() {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
@@ -150,6 +150,12 @@ h1 {
   }
   @include tablet {
     font-size: 2em;
+  }
+}
+
+.logo {
+  @include tablet {
+    margin-top: 100px;
   }
 }
 
@@ -202,7 +208,6 @@ p {
   background-color: $primary-color;
   border-radius: 5px;
   box-shadow: 5px 5px 6px lightgrey;
-  padding: 10px 0px;
 
   .h3Line {
     border-bottom: white 1px solid;
@@ -227,6 +232,13 @@ p {
     max-width: 550px;
     margin: 30px 20px;
     box-shadow: 1px 1px 5px black;
+    @include tablet {
+      max-width: 500px;
+    }
+    @include mobile {
+      max-width: 300px;
+      flex-direction: column;
+    }
   }
 
   .card-title {
@@ -254,6 +266,12 @@ p {
     max-width: 40%;
     border-top-right-radius: 0;
     border-bottom-left-radius: calc(0.25rem - 1px);
+    @include mobile {
+      max-width: 80%;
+      margin: 10px 0px 0px;
+      border-radius: 2%;
+      object-fit: contain;
+    }
   }
 
   .card-text {

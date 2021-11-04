@@ -55,6 +55,10 @@ header p a:hover {
   transition: color 0.15s ease-in-out;
 }
 
+header p .test {
+  text-align: end;
+}
+
 header .flexP {
   -webkit-box-pack: end;
       -ms-flex-pack: end;

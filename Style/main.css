@@ -29,6 +29,11 @@ body {
   overflow-x: hidden;
 }
 
+/* * {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+}*/
 /* Header */
 header p {
   -webkit-box-pack: center;
@@ -527,11 +532,11 @@ h1 {
 /* Section */
 .h2Mobile {
   background-color: #16513d;
-  padding: 15px 5px 10px;
+  padding: 15px 0px 10px;
 }
 
 .h2Mobile h2 {
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 
 .textLine {

@@ -29,6 +29,11 @@ body {
   overflow-x: hidden;
 }
 
+/* * {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+}*/
 /* Header */
 header p {
   -webkit-box-pack: center;

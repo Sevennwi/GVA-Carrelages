@@ -34,9 +34,6 @@ header {
   .headerLine {
     border-bottom: 2px solid $second-color;
     @include ordi {
-      font-size: 0.8em;
-    }
-    @include tablet {
       font-size: 1em;
     }
   }

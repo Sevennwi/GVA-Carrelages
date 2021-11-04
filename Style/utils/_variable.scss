@@ -1,6 +1,12 @@
 $primary-color: #16513d;
 $second-color: #2ba644;
 
+@mixin quatreK {
+  @media all and (min-width: 1900px) {
+    @content;
+  }
+}
+
 @mixin ordi {
   @media all and (max-width: 1200px) {
     @content;
@@ -8,7 +14,7 @@ $second-color: #2ba644;
 }
 
 @mixin tablet {
-  @media all and (max-width: 766px) {
+  @media all and (max-width: 767px) {
     @content;
   }
 }

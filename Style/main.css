@@ -181,6 +181,12 @@ header nav .navbar-toggler.collapsed ~ .navbar-collapse {
   }
 }
 
+@media all and (max-width: 767px) {
+  .logo {
+    margin-top: 20px;
+  }
+}
+
 @media all and (max-width: 576px) {
   .logo {
     position: absolute;

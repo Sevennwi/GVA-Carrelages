@@ -110,6 +110,9 @@ header {
   @include ordi {
     max-width: 350px;
   }
+@include tablet {
+    margin-top: 20px;
+  }
   @include mobile {
     position: absolute;
     z-index: 1;

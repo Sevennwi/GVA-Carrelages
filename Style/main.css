@@ -193,11 +193,8 @@ header nav .navbar-toggler.collapsed ~ .navbar-collapse {
 }
 
 /* Footer */
-.containerGreen {
-  background-color: #16513d;
-}
-
 .containerGeenLine {
+  background-color: #16513d;
   border-top: 2px solid white;
   margin: 0 auto;
 }
@@ -214,7 +211,7 @@ header nav .navbar-toggler.collapsed ~ .navbar-collapse {
           align-items: center;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 1200px) {
   .containerGeenLine .flexP {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -224,6 +221,7 @@ header nav .navbar-toggler.collapsed ~ .navbar-collapse {
 }
 
 .containerGeenLine p {
+  font-size: 1.1em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -539,12 +537,12 @@ h1 {
   font-size: 1.3em;
 }
 
-.textLine {
+article .mainText .textLine {
   position: relative;
   font-size: 1.3em;
 }
 
-.textLine::after {
+article .mainText .textLine::after {
   content: "";
   width: 30%;
   border-bottom: solid 4px #2ba644;
@@ -553,6 +551,10 @@ h1 {
   top: 100%;
   z-index: 1;
   border-radius: 10px;
+}
+
+article .mainText p {
+  font-size: 1.2em;
 }
 
 .cardContainer {
@@ -658,7 +660,14 @@ h1 {
 }
 
 .cardContainer .card-text li {
+  font-size: 1.1em;
   padding: 3px 0 3px 10px;
+}
+
+@media all and (max-width: 767px) {
+  .cardContainer .card-text li {
+    font-size: 1em;
+  }
 }
 
 .cardContainer .card-text li::before {
@@ -729,6 +738,7 @@ article .divImg img {
 article .divImg p {
   position: relative;
   padding-top: 20px;
+  font-size: 1.4em;
 }
 
 article .divImg p::after {
@@ -740,5 +750,13 @@ article .divImg p::after {
   top: 20%;
   z-index: 1;
   border-radius: 10px;
+}
+
+.containerTextGreen {
+  background-color: #16513d;
+}
+
+.containerTextGreen p {
+  font-size: 1.1em;
 }
 /*# sourceMappingURL=main.css.map */

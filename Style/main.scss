@@ -190,20 +190,28 @@ h1 {
   }
 }
 
-.textLine {
-  position: relative;
-  font-size: 1.3em;
-  &::after {
-    content: "";
-    width: 30%;
-    border-bottom: solid 4px $second-color;
-    position: absolute;
-    left: 35%;
-    top: 100%;
-    z-index: 1;
-    border-radius: 10px;
+article {
+  .mainText {
+    .textLine {
+      position: relative;
+      font-size: 1.3em;
+      &::after {
+        content: "";
+        width: 30%;
+        border-bottom: solid 4px $second-color;
+        position: absolute;
+        left: 35%;
+        top: 100%;
+        z-index: 1;
+        border-radius: 10px;
+      }
+    }
+    p {
+      font-size: 1.2em;
+    }
   }
 }
+
 
 .cardContainer {
   background-color: $primary-color;
@@ -279,7 +287,11 @@ h1 {
     list-style: none;
     padding: 0;
     li {
+      font-size: 1.1em;
       padding: 3px 0 3px 10px;
+      @include tablet {
+        font-size: 1em;
+      }
       &::before {
         content: "♦";
         padding-right: 5px;
@@ -341,6 +353,7 @@ article {
     p {
       position: relative;
       padding-top: 20px;
+      font-size: 1.4em;
       &::after {
         content: "";
         width: 15%;
@@ -352,5 +365,12 @@ article {
         border-radius: 10px;
       }
     }
+  }
+}
+
+.containerTextGreen {
+  background-color: $primary-color;
+  p {
+    font-size: 1.1em;
   }
 }

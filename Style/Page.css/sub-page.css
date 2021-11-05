@@ -193,11 +193,8 @@ header nav .navbar-toggler.collapsed ~ .navbar-collapse {
 }
 
 /* Footer */
-.containerGreen {
-  background-color: #16513d;
-}
-
 .containerGeenLine {
+  background-color: #16513d;
   border-top: 2px solid white;
   margin: 0 auto;
 }
@@ -214,7 +211,7 @@ header nav .navbar-toggler.collapsed ~ .navbar-collapse {
           align-items: center;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 1200px) {
   .containerGeenLine .flexP {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -224,6 +221,7 @@ header nav .navbar-toggler.collapsed ~ .navbar-collapse {
 }
 
 .containerGeenLine p {
+  font-size: 1.1em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -303,18 +301,26 @@ header {
   font-size: 2.3em;
   padding: 15px;
   background-color: #16513d;
-  border-radius: 5%;
+  border-radius: 5px;
 }
 
 @media all and (max-width: 1200px) {
   .divH1 h1 {
     font-size: 2em;
+    margin: 0px 20px;
   }
 }
 
 @media all and (max-width: 770px) {
   .divH1 h1 {
     font-size: 2em;
+    margin: 0px 20px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .logo {
+    top: 20%;
   }
 }
 
@@ -328,7 +334,8 @@ header {
   font-size: 1.4em;
 }
 
-section article .containRight {
+/* Page A propos*/
+.section-A-Propos article .containRight {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -336,12 +343,12 @@ section article .containRight {
   position: relative;
 }
 
-section article .containRight:first-child {
+.section-A-Propos article .containRight:first-child {
   margin: 20px 0px 70px;
 }
 
 @media all and (max-width: 770px) {
-  section article .containRight {
+  .section-A-Propos article .containRight {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -349,7 +356,7 @@ section article .containRight:first-child {
   }
 }
 
-section article .containRight::after {
+.section-A-Propos article .containRight::after {
   content: "";
   width: 60%;
   border-bottom: solid 4px #2ba644;
@@ -361,36 +368,36 @@ section article .containRight::after {
 }
 
 @media all and (max-width: 1200px) {
-  section article .containRight::after {
+  .section-A-Propos article .containRight::after {
     width: 50%;
   }
 }
 
 @media all and (max-width: 770px) {
-  section article .containRight::after {
+  .section-A-Propos article .containRight::after {
     top: 103%;
     width: 100%;
   }
 }
 
-section article .containRight p {
+.section-A-Propos article .containRight p {
   font-size: 1.1em;
   text-align: justify;
 }
 
 @media all and (max-width: 770px) {
-  section article .containRight p {
+  .section-A-Propos article .containRight p {
     text-align: center;
     padding-bottom: 10px;
   }
 }
 
-section article .containRight img {
+.section-A-Propos article .containRight img {
   max-width: 350px;
   border-radius: 5%;
 }
 
-section article .containLeft {
+.section-A-Propos article .containLeft {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -400,7 +407,7 @@ section article .containLeft {
 }
 
 @media all and (max-width: 770px) {
-  section article .containLeft {
+  .section-A-Propos article .containLeft {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -408,7 +415,7 @@ section article .containLeft {
   }
 }
 
-section article .containLeft::after {
+.section-A-Propos article .containLeft::after {
   content: "";
   width: 60%;
   border-bottom: solid 4px #2ba644;
@@ -420,69 +427,121 @@ section article .containLeft::after {
 }
 
 @media all and (max-width: 1200px) {
-  section article .containLeft::after {
+  .section-A-Propos article .containLeft::after {
     width: 50%;
   }
 }
 
 @media all and (max-width: 770px) {
-  section article .containLeft::after {
+  .section-A-Propos article .containLeft::after {
     left: 0;
     top: 103%;
     width: 100%;
   }
 }
 
-section article .containLeft p {
+.section-A-Propos article .containLeft p {
   font-size: 1.1em;
   text-align: justify;
 }
 
 @media all and (max-width: 770px) {
-  section article .containLeft p {
+  .section-A-Propos article .containLeft p {
     text-align: center;
     padding-top: 10px;
   }
 }
 
-section article .containLeft img {
+.section-A-Propos article .containLeft img {
   max-width: 350px;
   border-radius: 5%;
 }
 
-section article .slideIn {
+.section-A-Propos article .slideIn {
   opacity: 0;
 }
 
-section article .slideIn-transition {
+.section-A-Propos article .slideIn-transition {
   -webkit-animation: slideInTop 0.7s ease-in-out forwards;
           animation: slideInTop 0.7s ease-in-out forwards;
 }
 
-section .banner {
+.section-A-Propos .banner {
   background: url(/Photos/Bannière/Ecology3-ban.jpg) no-repeat;
   background-size: cover;
 }
 
-section .banner h2 {
+.section-A-Propos .banner h2 {
   padding: 20px 0px;
 }
 
-section .banner-2 {
+.section-A-Propos .banner-2 {
   background: url(/Photos/Bannière/Security1.jpg) no-repeat;
   background-size: cover;
 }
 
-section .banner-2 h2 {
+.section-A-Propos .banner-2 h2 {
   padding: 20px 0px;
 }
 
-section .banner-3 {
+.section-A-Propos .banner-3 {
   background: url(/Photos/Bannière/Team-ban1.jpg) no-repeat;
   background-size: cover;
 }
 
-section .banner-3 h2 {
+.section-A-Propos .banner-3 h2 {
   padding: 20px 0px;
+}
+
+/* Page Equipe*/
+.section-Equipe .articleLine {
+  position: relative;
+  margin: 20px auto 30px;
+}
+
+.section-Equipe .articleLine::after {
+  content: "";
+  width: 70%;
+  border-bottom: solid 4px #2ba644;
+  position: absolute;
+  left: 15%;
+  top: 100%;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.section-Equipe .articleLine p {
+  margin: 20px auto;
+  padding: 0px 10px 30px;
+  font-size: 1.2em;
+}
+
+div .equipeH2 {
+  margin: 20px 0;
+}
+
+div .equipeH2 h2 {
+  margin: 10px auto;
+  max-width: 50%;
+  padding: 10px 0px;
+  background-color: #16513d;
+  border-radius: 5px;
+}
+
+@media all and (max-width: 576px) {
+  div .equipeH2 h2 {
+    max-width: 70%;
+  }
+}
+
+div .equipeOrga .organigramme {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+@media all and (max-width: 767px) {
+  div .equipeOrga .organigramme {
+    max-width: 100%;
+  }
 }
 /*# sourceMappingURL=sub-page.css.map */

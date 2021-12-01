@@ -79,7 +79,6 @@
   }
 }
 
-
 @keyframes animationLogo {
   0% {
     opacity: 1;
@@ -133,12 +132,12 @@ header {
     url(/Photos/Background/Geneva.jpg) no-repeat 40% 17%;
   height: 100vh;
   position: relative;
-    @include quatreK() {
+  @include quatreK() {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
       url(/Photos/Background/Geneva.jpg) no-repeat;
     background-size: 100%;
   }
-    @include ordi() {
+  @include ordi() {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
       url(/Photos/Background/Geneva.jpg) no-repeat 48% 10%;
   }
@@ -212,7 +211,6 @@ article {
   }
 }
 
-
 .cardContainer {
   background-color: $primary-color;
   border-radius: 5px;
@@ -240,7 +238,7 @@ article {
     align-items: center;
     max-width: 550px;
     margin: 30px 20px;
-    box-shadow: 1px 1px 5px black;
+    box-shadow: 2px 2px 10px black;
     @include tablet {
       max-width: 500px;
     }
@@ -272,7 +270,7 @@ article {
 
   .card img {
     margin: -1px -13px;
-    max-width: 40%;
+    max-width: 45%;
     border-top-right-radius: 0;
     border-bottom-left-radius: calc(0.25rem - 1px);
     @include mobile {
@@ -299,7 +297,37 @@ article {
       }
     }
   }
+
+  .cardHover {
+    font-size: 1em;
+    text-decoration: none;
+    color: white;
+    background-color: $primary-color;
+    &:hover {
+      background-color: $second-color;
+      transition: background-color 0.2s ease-in-out;
+    }
+    &:hover i{
+      transition: all 0.2s ease-in-out;
+      opacity: 1;
+      transform: translateX(3px);
+      &:nth-child(1) {
+        transition-delay: 0.15s;
+      }
+    }
+    span {
+      i{
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+        transform: translateX(-2px);
+        &:nth-child(2) {
+          transition-delay: 0.075s;
+        }
+      }
+    }
+  }
 }
+
 
 @media (prefers-reduced-motion) {
   .slideIn {

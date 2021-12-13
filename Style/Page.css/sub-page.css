@@ -527,6 +527,12 @@ header nav .navbar-toggler.collapsed ~ .navbar-collapse {
   margin: 0 auto 100px;
 }
 
+@media all and (max-width: 576px) {
+  .formatConstruct {
+    max-width: 50%;
+  }
+}
+
 /* Page Equipe*/
 .headerEquipe {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.15))), url(/Photos/Background/cuisine.jpg) no-repeat;

@@ -261,8 +261,18 @@ header nav .navbar-toggler.collapsed ~ .navbar-collapse {
   vertical-align: middle;
 }
 
-/* Header */
-header {
+/* Animation globale */
+.slideIn {
+  opacity: 0;
+}
+
+.slideIn-transition {
+  -webkit-animation: slideInTop 0.7s ease-in-out forwards;
+          animation: slideInTop 0.7s ease-in-out forwards;
+}
+
+/*Page A propos*/
+.headerAPropos {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.2))), url(/Photos/Background/expo-terrasse.jpg) no-repeat;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(/Photos/Background/expo-terrasse.jpg) no-repeat;
   background-size: 100%;
@@ -271,14 +281,14 @@ header {
 }
 
 @media all and (max-width: 1200px) {
-  header {
+  .headerAPropos {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.2))), url(/Photos/Background/expo-terrasse.jpg) no-repeat 48% 10%;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(/Photos/Background/expo-terrasse.jpg) no-repeat 48% 10%;
   }
 }
 
 @media all and (max-width: 576px) {
-  header {
+  .headerAPropos {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.2))), url(/Photos/Background/expo-terrasse.jpg) no-repeat 40% 16%;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(/Photos/Background/expo-terrasse.jpg) no-repeat 40% 16%;
   }
@@ -340,7 +350,6 @@ header {
   font-size: 1.4em;
 }
 
-/* Page A propos*/
 .section-A-Propos article .containRight {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -463,15 +472,6 @@ header {
   border-radius: 5%;
 }
 
-.section-A-Propos article .slideIn {
-  opacity: 0;
-}
-
-.section-A-Propos article .slideIn-transition {
-  -webkit-animation: slideInTop 0.7s ease-in-out forwards;
-          animation: slideInTop 0.7s ease-in-out forwards;
-}
-
 .section-A-Propos .banner {
   background: url(/Photos/Bannière/Ecology3-ban.jpg) no-repeat;
   background-size: cover;
@@ -499,10 +499,38 @@ header {
   padding: 20px 0px;
 }
 
+/* Page Formats*/
+.headerFormats {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.2))), url(/Photos/Background/expo-terrasse.jpg) no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(/Photos/Background/expo-terrasse.jpg) no-repeat;
+  background-size: 100%;
+  height: 90vh;
+  position: relative;
+}
+
+@media all and (max-width: 1200px) {
+  .headerFormats {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.2))), url(/Photos/Background/expo-terrasse.jpg) no-repeat 48% 10%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(/Photos/Background/expo-terrasse.jpg) no-repeat 48% 10%;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .headerFormats {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.2))), url(/Photos/Background/expo-terrasse.jpg) no-repeat 40% 16%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(/Photos/Background/expo-terrasse.jpg) no-repeat 40% 16%;
+  }
+}
+
+.formatConstruct {
+  max-width: 20%;
+  margin: 0 auto 100px;
+}
+
 /* Page Equipe*/
 .headerEquipe {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.2))), url(/Photos/Clos-10/IMG_9243.jpg) no-repeat;
-  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)), url(/Photos/Clos-10/IMG_9243.jpg) no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.15))), url(/Photos/Background/cuisine.jpg) no-repeat;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15)), url(/Photos/Background/cuisine.jpg) no-repeat;
   background-size: 100%;
   height: 90vh;
   position: relative;
@@ -510,15 +538,15 @@ header {
 
 @media all and (max-width: 1200px) {
   .headerEquipe {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.2))), url(/Photos/Clos-10/IMG_9243.jpg) no-repeat 48% 10%;
-    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)), url(/Photos/Clos-10/IMG_9243.jpg) no-repeat 48% 10%;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.2))), url(/Photos/Background/cuisine.jpg) no-repeat 48% 10%;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)), url(/Photos/Background/cuisine.jpg) no-repeat 48% 10%;
   }
 }
 
 @media all and (max-width: 576px) {
   .headerEquipe {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.2))), url(/Photos/Clos-10/IMG_9243.jpg) no-repeat 40% 16%;
-    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)), url(/Photos/Clos-10/IMG_9243.jpg) no-repeat 40% 16%;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.2))), url(/Photos/Background/cuisine.jpg) no-repeat 20% 15%;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)), url(/Photos/Background/cuisine.jpg) no-repeat 20% 15%;
   }
 }
 
@@ -559,6 +587,18 @@ div .equipeH2 h2 {
 @media all and (max-width: 576px) {
   div .equipeH2 h2 {
     max-width: 70%;
+  }
+}
+
+div .equipeOrga .team {
+  max-width: 80%;
+  margin: 0 auto;
+  border-radius: 1.5%;
+}
+
+@media all and (max-width: 767px) {
+  div .equipeOrga .team {
+    max-width: 100%;
   }
 }
 

@@ -645,7 +645,7 @@ article .mainText p {
 
 .cardContainer .card img {
   margin: -1px -13px;
-  max-width: 45%;
+  max-width: 50%;
   border-top-right-radius: 0;
   border-bottom-left-radius: calc(0.25rem - 1px);
 }

@@ -268,7 +268,7 @@ div {
   .equipeOrga {
     .team {
       max-width: 80%;
-      margin: 0 auto;
+      margin: 10px auto 0;
       border-radius: 1.5%;
       @include tablet {
         max-width: 100%;
@@ -276,7 +276,7 @@ div {
     }
     .organigramme {
       max-width: 80%;
-      margin: 0 auto;
+      margin: 20px auto 30px;
       @include tablet {
         max-width: 100%;
       }

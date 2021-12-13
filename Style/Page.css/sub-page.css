@@ -598,7 +598,7 @@ div .equipeH2 h2 {
 
 div .equipeOrga .team {
   max-width: 80%;
-  margin: 0 auto;
+  margin: 10px auto 0;
   border-radius: 1.5%;
 }
 
@@ -610,7 +610,7 @@ div .equipeOrga .team {
 
 div .equipeOrga .organigramme {
   max-width: 80%;
-  margin: 0 auto;
+  margin: 20px auto 30px;
 }
 
 @media all and (max-width: 767px) {

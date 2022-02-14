@@ -7,6 +7,13 @@ $second-color: #2ba644;
   }
 }
 
+@mixin Apropos {
+  /* No less than 1200px, no greater than 1420px */
+  @media (min-width: 1200px) and (max-width: 1420px) {
+    @content;
+  }
+}
+
 @mixin ordi {
   @media all and (max-width: 1200px) {
     @content;

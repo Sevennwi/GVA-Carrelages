@@ -135,7 +135,8 @@ header {
   @include quatreK() {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
       url(/Photos/Background/Geneva.jpg) no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    height: 80vh;
   }
   @include ordi() {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),

@@ -16,20 +16,13 @@
 .headerAPropos {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
     url(/Photos/Background/expo-terrasse.jpg) no-repeat;
-  background-size: 100%;
+  background-size: cover;
   height: 90vh;
   position: relative;
-  @include Apropos() {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
-      url(/Photos/Background/expo-terrasse.jpg) no-repeat 48% 10%;
-  }
   @include ordi() {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
-      url(/Photos/Background/expo-terrasse.jpg) no-repeat 48% 10%;
-  }
-  @include mobile {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
-      url(/Photos/Background/expo-terrasse.jpg) no-repeat 40% 16%;
+      url(/Photos/Background/expo-terrasse.jpg) no-repeat 50%;
+    background-size: cover;
   }
 }
 
@@ -190,21 +183,18 @@
 .headerFormats {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),
     url(/Photos/Background/sdb.jpg) no-repeat 100% 60%;
-  background-size: 100%;
+  background-size: cover;
   height: 90vh;
   position: relative;
-  @include quatreK() {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),
-      url(/Photos/Background/sdb.jpg) no-repeat 100% 40%;
-    background-size: 100%;
-  }
   @include ordi() {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
-      url(/Photos/Background/sdb.jpg) no-repeat 70% 20%;
+      url(/Photos/Background/sdb.jpg) no-repeat 70%;
+    background-size: cover;
   }
   @include mobile {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
-      url(/Photos/Background/sdb.jpg) no-repeat 70% 20%;
+      url(/Photos/Background/sdb.jpg) no-repeat 70%;
+    background-size: cover;
   }
 }
 
@@ -219,27 +209,20 @@
 /* Page Equipe*/
 
 .headerEquipe {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.1)
-    ),
-    url(/Photos/Background/cuisine.jpg) no-repeat;
-  background-size: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+    url(/Photos/Background/photo-bureau.jpg) no-repeat 100% 40%;
+  background-size: cover;
   height: 90vh;
   position: relative;
   @include ordi() {
-    background: linear-gradient(
-        rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 0.2)
-      ),
-      url(/Photos/Background/cuisine.jpg) no-repeat 48% 10%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+      url(/Photos/Background/photo-bureau.jpg) no-repeat 50%;
+    background-size: cover;
   }
   @include mobile {
-    background: linear-gradient(
-        rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 0.2)
-      ),
-      url(/Photos/Background/cuisine.jpg) no-repeat 20% 15%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+      url(/Photos/Background/photo-bureau.jpg) no-repeat 70%;
+    background-size: cover;
   }
 }
 
@@ -249,10 +232,10 @@
     margin: 20px auto 30px;
     &::after {
       content: "";
-      width: 70%;
+      width: 50%;
       border-bottom: solid 4px $second-color;
       position: absolute;
-      left: 15%;
+      left: 25%;
       top: 100%;
       z-index: 1;
       border-radius: 10px;
@@ -265,9 +248,23 @@
   }
 }
 
+.teamImageContainer {
+  display: flex;
+  justify-content: center;
+  .teamImage {
+    margin: 20px 0;
+    max-width: 70%;
+    border-radius: 5px;
+    @include tablet {
+      max-width: 100%;
+      border-radius: 0;
+    }
+  }
+}
+
 div {
   .equipeH2 {
-    margin: 20px 0;
+    margin: 50px 0;
     h2 {
       margin: 10px auto;
       max-width: 50%;
@@ -281,19 +278,45 @@ div {
   }
 
   .equipeOrga {
-    .team {
-      max-width: 80%;
-      margin: 10px auto 0;
-      border-radius: 1.5%;
-      @include tablet {
-        max-width: 100%;
-      }
+    margin: 20px auto;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 150px 10px;
+    @include ordi {
+      width: 100%;
     }
-    .organigramme {
-      max-width: 60%;
-      margin: 20px auto 30px;
+    .teamMember-container {
+      background-color: $primary-color;
+      padding: 0 50px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 5px #222;
+      &:last-child {
+        grid-column: span 2;
+      }
       @include tablet {
-        max-width: 100%;
+        grid-column: span 2;
+      }
+      .teamMember-img {
+        margin: -50px 0 0;
+        max-width: 250px;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 2px 2px 20px #222;
+        @include mobile {
+          max-width: 220px;
+        }
+      }
+      .teamMember-text {
+        text-align: center;
+        color: white;
+        padding: 20px 0 0;
+        font-size: 1.3em;
+        p:first-child {
+          font-weight: bold;
+        }
       }
     }
   }

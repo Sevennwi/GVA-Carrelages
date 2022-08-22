@@ -268,6 +268,12 @@ header nav .navbar-toggler.collapsed ~ .navbar-collapse {
   font-size: 1.1em;
 }
 
+@media all and (max-width: 576px) {
+  .signature {
+    margin: 20px 0 0;
+  }
+}
+
 .signature a {
   text-decoration: none;
   color: lightgray;

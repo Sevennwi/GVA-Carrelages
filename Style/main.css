@@ -231,6 +231,7 @@ header nav .navbar-toggler.collapsed ~ .navbar-collapse {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 25px;
 }
 
 @media all and (max-width: 767px) {
@@ -562,6 +563,7 @@ h1 {
 .h2Mobile {
   background-color: #156760;
   padding: 15px 0px 10px;
+  margin-bottom: 30px;
 }
 
 .h2Mobile h2 {
@@ -678,6 +680,9 @@ article .mainText p {
   max-width: 50%;
   border-top-right-radius: 0;
   border-bottom-left-radius: calc(0.25rem - 1px);
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media all and (max-width: 576px) {

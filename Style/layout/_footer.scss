@@ -16,6 +16,7 @@
   p {
     font-size: 1.1em;
     justify-content: center;
+    margin-bottom: 25px;
     @include tablet {
       align-items: center;
     }

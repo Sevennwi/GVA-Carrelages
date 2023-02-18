@@ -302,9 +302,9 @@ div {
       border-radius: 15px;
       box-shadow: 2px 2px 5px #222;
       // Activate when the grid number is odd
-      /* &:last-child {
+       &:last-child {
         grid-column: span 2;
-      } */
+      } 
       @include tablet {
         grid-column: span 2;
       }

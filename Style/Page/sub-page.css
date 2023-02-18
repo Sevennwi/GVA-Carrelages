@@ -685,9 +685,10 @@ div .equipeOrga .teamMember-container {
   border-radius: 15px;
   -webkit-box-shadow: 2px 2px 5px #222;
           box-shadow: 2px 2px 5px #222;
-  /* &:last-child {
-        grid-column: span 2;
-      } */
+}
+
+div .equipeOrga .teamMember-container:last-child {
+  grid-column: span 2;
 }
 
 @media all and (max-width: 767px) {
